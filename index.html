@@ -1,157 +1,162 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>节约用水 - 守护生命之源</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-blue: #00a8ff;
-            --dark-blue: #0056b3;
-            --bg-color: #e0f7fa;
-        }
-
-        body {
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            margin: 0;
-            padding: 0;
-            /* 使用纯 CSS 渐变替代背景图，防止图片 404 */
-            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
-            min-height: 100vh;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .header i {
-            font-size: 60px;
-            color: var(--dark-blue);
-            margin-bottom: 20px;
-            animation: drop 2s infinite;
-        }
-
-        @keyframes drop {
-            0% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(10px) scale(1.1); }
-            100% { transform: translateY(0) scale(1); }
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            color: var(--dark-blue);
-            margin: 10px 0;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: #555;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            width: 90%;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-
-        .card i {
-            font-size: 35px;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .card h3 {
-            margin-bottom: 10px;
-            color: #222;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        .action-btn {
-            margin-top: 40px;
-            padding: 15px 40px;
-            background-color: var(--dark-blue);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .action-btn:hover {
-            background-color: #003d80;
-        }
-
-        .footer {
-            margin-top: auto;
-            padding: 30px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>节约用水，从我做起</title>
+  <style>
+    body {
+      font-family: "Microsoft YaHei", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f8ff;
+      color: #333;
+    }
+    header {
+      background: #2b7cff;
+      color: #fff;
+      padding: 20px 40px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px 40px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      padding: 20px 24px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #1b5fd1;
+      font-size: 20px;
+      border-left: 4px solid #1b5fd1;
+      padding-left: 10px;
+    }
+    .card ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+    .highlight {
+      background: #e6f1ff;
+      border-left: 4px solid #2b7cff;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .tips-list li::marker {
+      color: #2b7cff;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #777;
+      padding: 15px 0 25px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      border: none;
+      background: #2b7cff;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: #1b5fd1;
+    }
+    .counter {
+      font-weight: bold;
+      color: #2b7cff;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>节约用水，从我做起</h1>
+    <p>水是生命之源，每一滴都弥足珍贵</p>
+  </header>
 
-    <div class="header">
-        <i class="fas fa-tint"></i>
-        <h1>节约用水，从我做起</h1>
-        <p class="subtitle">水是生命之源，请珍惜每一滴生命之水。我们的每一个小举动，都在为地球的未来加分。</p>
-    </div>
+  <main>
+    <section class="card">
+      <h2>为什么要节约用水？</h2>
+      <p>地球上的水很多，但真正可以直接利用的淡水资源却非常有限。随着人口增长、城市发展和气候变化，水资源短缺问题在不断加剧。</p>
+      <div class="highlight">
+        小小一个习惯的改变，就可能为地球节省成百上千升的水。  
+        节水，不只是口号，而是生活方式。
+      </div>
+    </section>
 
-    <div class="container">
-        <div class="card">
-            <i class="fas fa-faucet"></i>
-            <h3>随手关紧水龙头</h3>
-            <p>使用完毕后检查龙头是否关严，防止滴漏。一个小小的滴水龙头，一个月能浪费上吨水。</p>
-        </div>
+    <section class="card">
+      <h2>日常生活中的节水小妙招</h2>
+      <ul class="tips-list">
+        <li><strong>缩短淋浴时间：</strong>洗澡时尽量控制在 5 分钟以内，避免长时间冲水。</li>
+        <li><strong>随手关紧水龙头：</strong>刷牙、洗脸、打肥皂时，关掉水龙头，避免长时间空流水。</li>
+        <li><strong>一水多用：</strong>洗菜水可用来浇花，洗衣机的甩干水可用于冲厕所。</li>
+        <li><strong>及时修理漏水：</strong>发现水龙头、马桶漏水要尽快维修，长期滴漏浪费惊人。</li>
+        <li><strong>使用节水设备：</strong>选择节水型马桶、节水花洒和带起泡器的水龙头。</li>
+        <li><strong>合理安排洗衣：</strong>尽量攒够衣物再洗，减少洗衣次数，节约水和电。</li>
+      </ul>
+    </section>
 
-        <div class="card">
-            <i class="fas fa-shower"></i>
-            <h3>缩短淋浴时间</h3>
-            <p>淋浴比盆浴更省水。如果每人缩短1分钟淋浴时间，每年可节省数千升水。</p>
-        </div>
+    <section class="card">
+      <h2>家庭节水小实验</h2>
+      <p>你可以在家做一个简单的“节水挑战”，看看自己一天能节约多少水：</p>
+      <ol>
+        <li><strong>记录用水习惯：</strong>今天开始，留意自己每一次打开水龙头的时间和用途。</li>
+        <li><strong>刻意减少浪费：</strong>尝试缩短用水时间、减少不必要的冲洗。</li>
+        <li><strong>对比变化：</strong>如果家里有水表，可以对比前后几天的用水量变化。</li>
+      </ol>
+      <div class="highlight">
+        可以给自己设定一个小目标：  
+        比如今天比昨天少浪费 <span class="counter" id="waterTarget">10</span> 升水。
+      </div>
+      <button class="btn" onclick="updateTarget()">换一个节水目标</button>
+    </section>
 
-        <div class="card">
-            <i class="fas fa-recycle"></i>
-            <h3>一水多用</h3>
-            <p>洗菜水可以用来浇花，淘米水可以用来洗碗。让每一滴水都发挥最大的价值。</p>
-        </div>
-    </div>
+    <section class="card">
+      <h2>从今天开始的一个承诺</h2>
+      <p>想一想，你今天可以立刻做到的一件节水小事，比如：</p>
+      <ul>
+        <li>今天洗澡时间减少 2 分钟</li>
+        <li>刷牙时全程关闭水龙头</li>
+        <li>把洗菜水留着浇花</li>
+      </ul>
+      <p>写下你的节水承诺，并坚持一周，你会发现——节约用水并不难，只需要一点点在意。</p>
+    </section>
+  </main>
 
-    <a href="https://baike.baidu.com/item/%节约用水" target="_blank" class="action-btn">了解更多节水知识</a>
+  <footer>
+    节约用水，珍惜每一滴——为了自己，也为了下一代。
+  </footer>
 
-    <div class="footer">
-        © 2026 绿色地球行动 | 保护环境，人人有责
-    </div>
-
+  <script>
+    const targets = [5, 8, 10, 12, 15, 20];
+    function updateTarget() {
+      const span = document.getElementById("waterTarget");
+      const current = Number(span.textContent);
+      let next = current;
+      while (next === current) {
+        next = targets[Math.floor(Math.random() * targets.length)];
+      }
+      span.textContent = next;
+    }
+  </script>
 </body>
 </html>
