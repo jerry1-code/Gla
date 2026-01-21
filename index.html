@@ -3,175 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>守护生命 - 保护濒危动物</title>
+    <title>节约用水 - 守护生命之源</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-blue: #00a8ff;
+            --dark-blue: #0056b3;
+            --bg-color: #e0f7fa;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            /* 替换为一张具有森林气息的保护动物背景图 */
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1564349683136-77e08bef1ef1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
             margin: 0;
-            padding: 20px;
-            color: #fff;
-        }
-        
-        .header {
-            text-align: center;
-            padding: 40px 0 10px;
-        }
-
-        .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        .search-container {
-            padding: 2rem;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-        
-        .search-box {
-            width: 100%;
-            padding: 15px 25px;
-            font-size: 18px;
-            border: none;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            outline: none;
-            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0;
+            /* 使用纯 CSS 渐变替代背景图，防止图片 404 */
+            background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%);
+            min-height: 100vh;
             color: #333;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 20px;
-            padding-bottom: 100px;
-        }
-        
-        .link-item {
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 20px;
-            padding: 20px;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
-        }
-        
-        .link-item:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .link-item:hover .link-text, .link-item:hover .link-icon {
-            color: #2d5a27;
-        }
-        
-        .link-item a {
-            text-decoration: none;
-            color: #fff;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
-        .link-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-            transition: color 0.3s;
-        }
-        
-        .link-text {
-            font-size: 16px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
 
-        .foot_marker {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
+        .header {
             text-align: center;
-            padding: 20px 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 50px 20px;
         }
 
-        .foot_marker a {
-            color: #ddd;
+        .header i {
+            font-size: 60px;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            animation: drop 2s infinite;
+        }
+
+        @keyframes drop {
+            0% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(10px) scale(1.1); }
+            100% { transform: translateY(0) scale(1); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            width: 90%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .card i {
+            font-size: 35px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .action-btn {
+            margin-top: 40px;
+            padding: 15px 40px;
+            background-color: var(--dark-blue);
+            color: white;
             text-decoration: none;
-            font-size: 14px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .action-btn:hover {
+            background-color: #003d80;
+        }
+
+        .footer {
+            margin-top: auto;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #666;
         }
     </style>
 </head>
 <body>
+
     <div class="header">
-        <h1>守护万物生灵</h1>
-        <p>保护濒危野生动物，维护地球生态平衡</p>
+        <i class="fas fa-tint"></i>
+        <h1>节约用水，从我做起</h1>
+        <p class="subtitle">水是生命之源，请珍惜每一滴生命之水。我们的每一个小举动，都在为地球的未来加分。</p>
     </div>
 
-    <div class="search-container">
-        <form action="https://baike.baidu.com/search" method="get" target="_blank">
-            <input class="search-box" type="text" name="word" placeholder="搜索珍稀物种百科...">
-        </form>
-    </div>
-    
     <div class="container">
-        <div class="link-item">
-            <a href="https://www.worldwildlife.org/species/giant-panda" target="_blank">
-                <i class="fas fa-paw link-icon"></i>
-                <span class="link-text">大熊猫</span>
-            </a>
+        <div class="card">
+            <i class="fas fa-faucet"></i>
+            <h3>随手关紧水龙头</h3>
+            <p>使用完毕后检查龙头是否关严，防止滴漏。一个小小的滴水龙头，一个月能浪费上吨水。</p>
         </div>
-        <div class="link-item">
-            <a href="https://www.worldwildlife.org/species/snow-leopard" target="_blank">
-                <i class="fas fa-cat link-icon"></i>
-                <span class="link-text">雪豹</span>
-            </a>
+
+        <div class="card">
+            <i class="fas fa-shower"></i>
+            <h3>缩短淋浴时间</h3>
+            <p>淋浴比盆浴更省水。如果每人缩短1分钟淋浴时间，每年可节省数千升水。</p>
         </div>
-        <div class="link-item">
-            <a href="https://www.worldwildlife.org/species/elephant" target="_blank">
-                <i class="fas fa-hippo link-icon"></i>
-                <span class="link-text">亚洲象</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.worldwildlife.org/species/tiger" target="_blank">
-                <i class="fas fa-dragon link-icon"></i>
-                <span class="link-text">东北虎</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.worldwildlife.org/species/sea-turtle" target="_blank">
-                <i class="fas fa-otter link-icon"></i>
-                <span class="link-text">海龟</span>
-            </a>
-        </div>
-        <div class="link-item">
-            <a href="https://www.worldwildlife.org/species/rhinoceros" target="_blank">
-                <i class="fas fa-horse link-icon"></i>
-                <span class="link-text">犀牛</span>
-            </a>
+
+        <div class="card">
+            <i class="fas fa-recycle"></i>
+            <h3>一水多用</h3>
+            <p>洗菜水可以用来浇花，淘米水可以用来洗碗。让每一滴水都发挥最大的价值。</p>
         </div>
     </div>
 
-    <div class="foot_marker">
-        <a href="#">© 2024 动物保护志愿者联盟 - 让爱传递</a>
+    <a href="https://baike.baidu.com/item/%节约用水" target="_blank" class="action-btn">了解更多节水知识</a>
+
+    <div class="footer">
+        © 2026 绿色地球行动 | 保护环境，人人有责
     </div>
+
 </body>
 </html>
